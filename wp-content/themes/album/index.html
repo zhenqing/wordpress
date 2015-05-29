@@ -1,182 +1,351 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Album</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" type="text/css" href="css/carousel.css">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <title>Album</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport"><!-- Latest compiled and minified CSS -->
+    <link href="css/carousel.css" rel="stylesheet" type="text/css"><!-- Optional theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet"><!-- Latest compiled and minified CSS -->
+    <!-- jQuery library -->
 
-<!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><!-- Latest compiled JavaScript -->
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
- <!-- Bootstrap core JavaScript
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script><!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/custom.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
     <div class="navbar-wrapper">
-<script>
+        <script>
 $(window).scroll(function(){
-  if($(document).scrollTop()>$('.navbar_position').position().top) 
-    $('.navbar').css({'position':'fixed','zIndex':100,'top':'0','width':'100%'});
-  else $('.navbar').css({'position':'relative'});
-});
-$(document).ready(function(){
-   $(window).bind('scroll', function() {
+        if($(document).scrollTop()>$('.navbar_position').position().top) 
+        $('.navbar').css({'position':'fixed','zIndex':100,'top':'0','width':'100%'});
+        else $('.navbar').css({'position':'relative'});
+        });
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+        });
+        $(document).ready(function(){
+        $(window).bind('scroll', function() {
          if ($(window).scrollTop() > 400) {
             $(".gototop").show();
          }
          else {
           $(".gototop").hide();
          }
-    });
-});
-$('.gototop').click(function(){
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-    return false;
-});
-</script>
-      <div class="container">
-        <div class="navbar_position"></div>
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Lindsay's album</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#tag">Tags</a></li>
-                <li><a href="#list">List</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Favorite <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Ocean</a></li>
-                    <li><a href="#">Self</a></li>
-                    <li><a href="#">Drawing</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        });
+        });
+        $('.gototop').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+        });
+        </script>
 
-      </div>
+        <div class="navbar_position"></div>
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Lindsay's album</a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="#">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="#tag">Tags</a>
+                        </li>
+
+                        <li>
+                            <a href="#list">Gallery<span class="badge">7</span></a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Favorite <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Ocean</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Self</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Drawing<span class="label label-default">New</span></a>
+                                </li>
+
+                                <li class="divider"></li>
+
+                                <li class="dropdown-header">Nav header</li>
+
+                                <li>
+                                    <a href="#">Separated link</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">One more separated link</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="padding:10px;"><input data-provide="typeahead" placeholder="search" type="text"><span class="glyphicon glyphicon-search"></span></li>
+
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-user" data-placement="top" data-toggle="tooltip" title="Hooray!"></span> Sign Up</a>
+                        </li>
+
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
 
-
-    <!-- Carousel
+    <div class="container">
+        <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
-          <div id="slide" class="container">
-            <div class="carousel-caption">
-              <h1>Memory</h1>
-              <img src="images/1.JPG" class="img-responsive"/>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
 
-          </div>
-        <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <img src="images/2.JPG" class="img-responsive"/>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
+        <div class="carousel slide" data-ride="carousel" id="myCarousel">
+            <!-- Indicators -->
+
+            <ol class="carousel-indicators">
+                <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+
+                <li data-slide-to="1" data-target="#myCarousel"></li>
+
+                <li data-slide-to="2" data-target="#myCarousel"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img alt="First slide" class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
+
+                    <div class="container" id="slide">
+                        <div class="carousel-caption">
+                            <h1>Memory</h1><img class="img-responsive" src="images/1.JPG"> <button class="btn btn-info btn-lg" data-target="#myModal" data-toggle="modal" type="button">Sign up
+                            today</button> <!-- Modal -->
+
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button class="close" data-dismiss="modal" type="button">&times;</button>
+
+                                            <h4 class="modal-title">Modal Header</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <p>Some text in the modal.</p>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img alt="Second slide" class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
+
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Another example headline.</h1><img class="img-responsive" src="images/2.JPG">
+
+                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img alt="Third slide" class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
+
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>One more for good measure.</h1><img class="img-responsive" src="images/3.JPG">
+
+                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div><a class="left carousel-control" data-slide="prev" href="#myCarousel"><span class="glyphicon glyphicon-chevron-left"></span> <span class="sr-only">Previous</span></a> <a class=
+            "right carousel-control" data-slide="next" href="#myCarousel"><span class="glyphicon glyphicon-chevron-right"></span> <span class="sr-only">Next</span></a>
+        </div><!-- /.carousel -->
+        <script type="text/javascript"></script>
+
+        <div class="jumbotron">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+
+                        <th>Lastname</th>
+
+                        <th>Email</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>John</td>
+
+                        <td>Doe</td>
+
+                        <td>john@example.com</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mary</td>
+
+                        <td>Moe</td>
+
+                        <td>mary@example.com</td>
+                    </tr>
+
+                    <tr>
+                        <td>July</td>
+
+                        <td>Dooley</td>
+
+                        <td>july@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <img src="images/3.JPG" class="img-responsive"/>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+    </div>
+
+    <div id="extraBox">
+        <div class="tops">
+            <div class="le">
+                Recommended for You
             </div>
-          </div>
+
+            <div class="ri">
+                <a href="javascript:parent.exClose();"><img alt="close" border="0" height="16" src="http://assets.demo.rndsupport.net/static/common/_v0.0.0/img/recommend/xx.gif" width="16"></a>
+            </div>
+
+            <div class="clear"></div>
         </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
-<script type="text/javascript">
 
-</script>
+        <div class="box">
+            <div class="left">
+                <a href="javascript:towhere(-1);"><img alt="arrow" border="0" height="12" src="http://assets.demo.rndsupport.net/static/common/_v0.0.0/img/recommend/arrow_gray.gif" width="8"></a>
+            </div>
 
- <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>  
+            <div class="slide">
+                <ul id="ship" style="left: -552px;">
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/25/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/36/20150320/london-s-new-year-eve-celebrations-2014-%E2%80%93-latest.htm" target="_top">London’s New Year’s Eve Celebrations 2014 – Latest</a>
+                    </li>
 
-    
-      <!-- FOOTER -->
-      <footer>
-        <a href="javascript:;" class="gototop" style="display:none;"></a>
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/25/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/31/20150320/naturalist-journeys-announces-birding-nature-tour-florida-everglades-keys-highlighting.htm" target="_top">Naturalist Journeys Announces Birding and
+                        Nature Tour to Florida Everglades and Keys, Highlighting Florida’s Caribbean Ecological Connections</a>
+                    </li>
+
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/31/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/28/20150320/greenville-south-carolina-makes-top-10-list-best-travel-destination.htm" target="_top">Greenville South Carolina Makes Top 10 List of Best Travel
+                        Destination Cities in 2015</a>
+                    </li>
+
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/30/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/25/20150320/proclip-usa-exhibit-new-mobile-accessories-ces-2015-next-week.htm" target="_top">ProClip USA to Exhibit New Mobile Accessories at CES 2015 Next Week</a>
+                    </li>
+
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/29/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/20/20150320/anti-loneliness-ramen-bowl-daisuke-nagatomo-minnie-jan-wins-design.htm" target="_top">Anti-Loneliness Ramen Bowl by Daisuke Nagatomo &amp; Minnie Jan
+                        wins Design Award</a>
+                    </li>
+
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/36/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/19/20150320/application-meet-people-over-same-wi-fi-network-featured-newswatch.htm" target="_top">An Application to Meet People over the same Wi-Fi Network was
+                        Featured on NewsWatch Television on December 18, 2014</a>
+                    </li>
+
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/36/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/15/20150320/ship-date-announced-ipad-air-flip-turn-keyboard-cases-2.htm" target="_top">Ship Date Announced for iPad Air Flip Turn Keyboard Cases for iPad Air 2 from
+                        Sunrise Hitek</a>
+                    </li>
+
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/31/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/13/20150320/afinia-announces-h800-desktop-3d-printer.htm" target="_top">Afinia Announces Their H800 Desktop 3D Printer</a>
+                    </li>
+
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/30/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/11/20150320/lorann-oils-exhibit-2015-winter-fancy-food-show-san-francisco.htm" target="_top">LorAnn Oils to Exhibit at the 2015 Winter Fancy Food Show in San
+                        Francisco, CA</a>
+                    </li>
+
+                    <li>
+                        <img alt="" src="http://images.demo.rndsupport.net/data/images/full/29/sample-photo.gif?w=60&amp;h=52&amp;l=50&amp;t=40"> <a href=
+                        "/articles/8/20150320/crimson-cup-coffee-tea-adds-12-houses-8-states-2014.htm" target="_top">Crimson Cup Coffee &amp; Tea Adds 12 Coffee Houses in 8 States in 2014 to its
+                        Community of Independent Coffee Businesses</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="right">
+                <a href="javascript:towhere(1);"><img alt="icon" border="0" height="12" src="http://assets.demo.rndsupport.net/static/common/_v0.0.0/img/recommend/arrow_RIGHT_gray.gif" width="8"></a>
+            </div>
+        </div>
+    </div><script type="text/javascript">
+  var Oslide = new slide(S("ship"),0.4,276,5,true);
+      Oslide.interval = 10000;
+      Oslide.start();
+      function towhere(val){
+        var m = Oslide.move(val);
+        if(Oslide.limit==m) m = 0;
+      }
+      function s_automatic(){
+        if(this.autos){ 
+          var thisObj = this;
+          var val = 1;
+          this.di = val
+          this.autos = window.setTimeout(function(){thisObj.move(val);},this.interval,this);      
+        } 
+      }
+      ss("#ship li a").forEach(function(ele){
+        ele.onmouseover = function(){if(Oslide.autos) clearTimeout(Oslide.autos);};
+        ele.onmouseout = function(){Oslide.autos=1;Oslide.automatic();};
+      });
+      window.onload = function(){parent.target_ok=1};
+    </script> <!-- FOOTER -->
+
+    <footer>
+        <a class="gototop" href="javascript:;" style="display:none;"></a>
+
         <p class="pull-right"><a href="#">Back to top</a></p>
+
         <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
-
-
-   
-  </body>
+    </footer><!-- /.container -->
+</body>
 </html>

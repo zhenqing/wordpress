@@ -1,3 +1,4 @@
+
 .gototop {background:#3a383a url(../images/split_mobile.png) -27px -50px no-repeat; width:40px; height:40px; position:fixed; border-radius:40px; opacity:.9; bottom:3px; right:0; z-index:2000; cursor:pointer}
 
 .navbar-default {
@@ -59,3 +60,31 @@
     background-color: #c0392b;
   }
 }
+
+#extraBox {float:right;height:110px;background-color:#fff;margin:0;padding:0;border-top:1px solid #fff;}
+#extraBox .tops {margin:5px 0 0 14px;color:#cc0000;font-size:10pt;font-weight:bold;width:338px;}
+#extraBox .tops .le {float:left;width:270px;font-family:Arial}
+#extraBox .tops .ri {float:right;margin-right:4px;margin-bottom:5px;}
+#extraBox .box {clear:both;margin:5px 10px 10px 10px;border:1px solid #ccc;padding:0;width:338px;height:70px;}
+#extraBox .left {float:left;padding:30px 10px 0;}
+#extraBox .slide {float:left;overflow:hidden;width:276px;height:55px;position:relative;}
+#extraBox .right {float:left;padding:30px 10px 0;}
+
+#extraBox ul {width:10000px;position:absolute;}
+#extraBox li {float:left;width:266px;padding:8px 5px;height:60px;}
+#extraBox li .headline a {color:#222;font-weight:bold;}
+
+#extraBox li img {margin:0 10px 0 0;}
+.slide a {top: -0px;float: right;width: 188px;position: relative;font-weight:bold;font-size:10pt;font-family:Arial;
+      z-index: 10000000;position:absolute;padding-top:10px;}
+      a:link{ color:#222;text-decoration:none;}
+      a:hover{ color:#222;text-decoration:underline;}
+      a:visited{color:#222;text-decoration:none;}
+      
+      #title a {
+        float:left;
+        width:270px;
+        height:70px;
+        z-index: 10000000;position:absolute;padding-top:10px;
+      };
+.clear {clear:both;}
